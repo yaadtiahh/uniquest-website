@@ -19,7 +19,7 @@
             <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
         </div>
         <div class="news-content">
-            <p>{{ news.content }}</p>
+            <p>{{ news.content|safe }}</p>
         </div>
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
