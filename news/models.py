@@ -8,7 +8,7 @@ class News(models.Model):
     title = models.CharField(max_length=200, verbose_name="Заголовок")
     slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name="URL")
     content = RichTextField(verbose_name="Содержимое")
-    image = models.ImageField(upload_to="news_images/", blank=True, null=True, verbose_name="Изображение")
+    image = models.ImageField(upload_to="news/imgs", blank=True, null=True, verbose_name="Изображение")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
     is_published = models.BooleanField(default=True, verbose_name="Опубликовано")
@@ -27,7 +27,7 @@ class News(models.Model):
         help_text="Введите цвет в формате HEX, например, #000000."
     )
     background_image = models.ImageField(
-        upload_to="news_backgrounds/",
+        upload_to="news/imgs",
         blank=True,
         null=True,
         verbose_name="Фоновое изображение",
