@@ -37,12 +37,14 @@ body, html {
 .main-text .news-content {
     margin-top: 21px;
     width: 840px;
-    padding-left: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-text .news-content p{
     color: #569CFF;
-    text-align: left;
+    text-align: center;
     
     max-width: 136ch;
 }
