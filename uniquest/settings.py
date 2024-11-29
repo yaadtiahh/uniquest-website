@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'uniquestwebsite.herokuapp.com').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'uniquestwebsite.herokuapp.com,uniquestwebsite-4f0b0d0439ba.herokuapp.com').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
