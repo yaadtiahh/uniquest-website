@@ -21,7 +21,8 @@ body, html {
 
 .news-item img{
     width: 400px; 
-    height: 250px;
+    max-height: 250px;
+    height: auto;
 }
 
 .main-text {
