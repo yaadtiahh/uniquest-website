@@ -78,7 +78,9 @@ WSGI_APPLICATION = 'uniquest.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost/mydb')
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')
+    )
 }
 
 # Password validation

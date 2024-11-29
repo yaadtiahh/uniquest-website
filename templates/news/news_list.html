@@ -1,0 +1,31 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block title %}
+  The Quest
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <h1>Новости</h1>
+    <div class="news-list" >
+        {% for news in news %}
+        <div class="news-item">
+            <img src="{{ news.background_image.url}}" alt="">
+                <div class="main-text">
+                <h2><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
+                {{ news.content|safe|truncatewords:7}}
+                <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
+            </div>
+        </div>
+        {% empty %}
+            <p>Пока нет новостей.</p>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
