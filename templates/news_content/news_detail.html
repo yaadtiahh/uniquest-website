@@ -1,25 +1,25 @@
 {% load static %}
 
-{% block title %}
-    {{ news.title }}
-{% endblock %}
+<!-- {% block title %}
+    {{ news-item.title }}
+{% endblock %} -->
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news_details.css' %}">
 {% endblock %}
 
 
 <div class="news_detail">
     {% if news.image %}
-        <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
+        <img src="{{ news-item.image.url }}" alt="{{ news-item.title }}">
     {% endif %}
     <div class="main-content">
         <div class="main-text">
-            <h1>{{ news.title }}</h1>
-            <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
+            <h1>{{ news-item.title }}</h1>
+            <p><small>Дата: {{ news-item.created_at|date:"d M Y" }}</small></p>
         </div>
         <div class="news-content">
-            {{ news.content|safe }}
+            {{ news-item.content|safe }}
         </div>
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
