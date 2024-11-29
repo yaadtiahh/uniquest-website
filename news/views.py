@@ -4,8 +4,8 @@ from .models import News
 
 
 # Функциональное представление для домашней страницы
-def home(request):
-    return render(request, 'home.html')  # Убедитесь, что шаблон 'home.html' существует
+def index(request):
+    return render(request, 'index.html')  # Убедитесь, что шаблон 'home.html' существует
 
 
 # Класс-based представление для списка новостей
