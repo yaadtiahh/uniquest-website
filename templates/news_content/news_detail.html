@@ -1,12 +1,42 @@
 {% load static %}
-
 <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/template.css' %}">
+
+<header class="header">
+    <div class="logo">
+        <a href="/index"><img src="/static/imgs/logo-merito.PNG" alt="The Quest Logo"></a>
+    </div>
+    <div class="header-right">
+    <nav class="nav">
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news_list">News</a></li>
+        <li><a href="/about">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        </ul>
+    </nav>
+    <div class="more-info">
+        <span>More info</span>
+        <img src="/static/imgs/arrow-down.png" class="arrow-icon" alt="Arrow Icon">
+        <ul class="info-menu">
+            <li data-lang="en">English</li>
+            <li data-lang="ru">Русский</li>
+            <li data-lang="es">Español</li>
+            <li data-lang="fr">Français</li>
+        </ul>
+    </div>
+    <div class="btns">
+        <button class="btn-sign-in">Join</button>
+        <button class="btn-sign-up">Login</button>
+    </div>
+    </div>
+</header>
 
 <div class="main-content">
     <div class="news_detail">
         <img src="{{ news.background_image.url}}" alt="">
     </div>
-    
+
     <div class="main-text">
         <h1>{{ news.title }}</h1>
         <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
