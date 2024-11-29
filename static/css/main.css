@@ -631,7 +631,7 @@ body, html {
 /* <-- CONTACTS END --> */
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .main-content {
         padding-left: 10px; /* Меньшее значение для мобильных устройств */
         margin-top: 10px; /* Меньшее значение для мобильных устройств */
