@@ -10,16 +10,16 @@
 
 
 <div class="news_detail">
-    {% if news_item.image %}
+    {% if news.image %}
         <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
     {% endif %}
     <div class="main-content">
         <div class="main-text">
-            <h1>{{ news_item.title }}</h1>
-            <p><small>Дата: {{ news_item.created_at|date:"d M Y" }}</small></p>
+            <h1>{{ news.title }}</h1>
+            <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
         </div>
         <div class="news-content">
-            {{ news_item.content|safe }}
+            {{ news.content|safe }}
         </div>
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
