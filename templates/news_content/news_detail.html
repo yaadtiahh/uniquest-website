@@ -2,15 +2,17 @@
 
 <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
 
-<div class="news_detail">
+<div class="main-content">
     {% if news.image %}
-        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+        <div class="news_detail">
+            <img src="{{ news.background_image.url }}" alt="{{ news.title }}">
+        </div>
     {% endif %}
     <div class="main-text">
         <h1>{{ news.title }}</h1>
         <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
         <div class="news-content">
-            {{ news.content|safe }}
+            <p>{{ news.content|safe }}</p>
         </div>
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
