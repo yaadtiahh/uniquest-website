@@ -1,3 +1,4 @@
+/* Общие стили для всего тела */
 body, html {
     width: 100%;
     height: 100%;
@@ -7,17 +8,21 @@ body, html {
     background: url(/static/imgs/bg.jpg) no-repeat fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
-    overflow-x: hidden; /* Предотвращает горизонтальный скролл */
 }
 
-/* Применяем ко всем элементам */
+/* Убираем горизонтальный скроллинг только в body */
+body {
+    overflow-x: hidden;
+}
+
+/* Для всех элементов в body */
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
 
-/* Главный контент */
+/* Основной контент */
 .main-content {
     width: 100%;
     height: auto;
@@ -26,7 +31,6 @@ body, html {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #555;
-    overflow-x: hidden; /* Предотвращает выход за пределы */
 }
 
 .main-content .content {
@@ -47,7 +51,7 @@ body, html {
     line-height: 150%;
 }
 
-/* Innovate и другие секции */
+/* Инновативные блоки */
 .innovative,
 .features-news,
 .your-potential,
@@ -58,7 +62,6 @@ body, html {
     background-color: #fff;
     padding: 40px 20px;
     border-bottom: 1px solid #555;
-    overflow-x: hidden; /* Предотвращает выход за пределы */
 }
 
 .innovative-content,
@@ -73,6 +76,7 @@ body, html {
     margin: 0 auto;
 }
 
+/* Выставляем ограничения для карточек */
 .innovative .feature,
 .your-potential .feature {
     flex: 1;
@@ -88,7 +92,7 @@ body, html {
     line-height: 1.6;
 }
 
-/* Кнопки */
+/* Для кнопок */
 .btn-learn-more,
 a.btn-learn-more {
     width: 100%;
@@ -109,57 +113,6 @@ a.btn-learn-more {
 a.btn-learn-more:hover {
     background-color: #007AFF;
     color: #fff;
-}
-
-.exploring .post img {
-    width: 100%;
-    height: auto;
-}
-
-.contacts-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 100%;
-}
-
-.contact {
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 20px;
-}
-
-.contact img {
-    width: 48px;
-    height: 48px;
-}
-
-.contact h1 {
-    font-size: 32px;
-    color: #007AFF;
-}
-
-.contact p {
-    font-size: 16px;
-    color: #007AFF;
-}
-
-/* Контент в review и uniquest */
-.review-content .main-text p,
-.uniquest-transforms .main-text p {
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-.uniquest-transforms .box {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto 20px auto;
-    text-align: center;
-}
-
-.uniquest-transforms .box h3 {
-    font-size: 24px;
 }
 
 /* Адаптивность для экранов до 768px */
