@@ -1,4 +1,3 @@
-/* Общие стили для всего тела */
 body, html {
     width: 100%;
     height: 100%;
@@ -6,193 +5,627 @@ body, html {
     padding: 0;
     background-color: #007AFF;
     background: url(/static/imgs/bg.jpg) no-repeat fixed;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Шрифт */
 }
 
-/* Убираем горизонтальный скроллинг только в body */
-body {
-    overflow-x: hidden;
-}
 
-/* Для всех элементов в body */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-/* Основной контент */
+/* Главный контент */
 .main-content {
     width: 100%;
-    height: auto;
-    padding-left: 20px;
-    margin-top: 120px;
+    height: 600px;
+    padding-left: 100px;
+    margin-top: 220px;
+    box-sizing: border-box;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для четкости */
     border-bottom: 1px solid #555;
 }
 
 .main-content .content {
-    width: 100%;
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 560px;
+    height: 413px;
 }
 
-.main-text p {
-    font-size: 36px;
+.main-text p{
+    font-size: 56px;
     margin-bottom: 32px;
 }
 
 .main-description p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     line-height: 150%;
 }
 
-/* Инновативные блоки */
-.innovative,
-.features-news,
-.your-potential,
-.uniquest-transforms,
-.review,
-.contacts {
-    width: 100%;
+.main-description {
+    margin-bottom: 32px;
+}
+
+.main-btns {
+    margin-top: 32px;
+}
+
+
+.content .btn-get-started{
+    width: 129px;
+    height: 48px;
+    background-color: #ffffff;
+    color: #007AFF;
+    border: 2px solid #ffffff;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.content .btn-learn-more{
+    width: 129px;
+    height: 48px;
+    background-color: #007AFF;
+    color: white;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+
+/* INNOVATIVE */
+
+.innovative {
     background-color: #fff;
-    padding: 40px 20px;
+    width: 100%;
+    height: 864px;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 112px;
     border-bottom: 1px solid #555;
 }
 
-.innovative-content,
-.features-news .features-text,
-.exploring,
-.your-potential-content {
+.innovative-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1312px;
-    margin: 0 auto;
+    flex-direction: row; /* Устанавливаем направление флекса (по умолчанию) */
+    width: 1312px;
+    height: 640px;
+    gap: 80px;
 }
 
-/* Выставляем ограничения для карточек */
-.innovative .feature,
-.your-potential .feature {
-    flex: 1;
-    min-width: 280px;
-    max-width: 296px;
-    height: auto;
-    margin-bottom: 20px;
+.innovative-text {
+    width: 616px;
+    height: 505px;
+    padding-top: 67.5px;
+    padding-bottom: 67.5px;
 }
 
-.innovative .feature p,
-.your-potential .feature p {
+.innovative .main-text{
+    width: 616px;
+    height: 261px;
+}
+
+.innovative .main-text p{
+    font-size: 18px;
+    color: #007AFF;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
+
+.innovative .main-text h2{
+    font-size: 48px;
+    color: #007AFF;
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+/* INNOVATIVE FEATURES */
+
+.innovative .features {
+    display: flex;
+    justify-content: space-between; /* Разделение блоков по ширине */
+    width: 616px;
+    height: 132px;
+    padding-top: 32px;
+  }
+
+.innovative .feature h3 {
+    color: #007AFF; /* Синий цвет заголовков */
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 296px;
+    height: 28px;
+}
+
+.innovative .feature p {
+    color: #555; /* Серый цвет текста */
     font-size: 14px;
     line-height: 1.6;
+    width: 296px;
+    height: 72px;
 }
 
-/* Для кнопок */
-.btn-learn-more,
-a.btn-learn-more {
-    width: 100%;
-    max-width: 220px;
+.innovative .feature {
+    width: 296px;
+    height: 156px;
+}
+
+/* INNOVATIVE BTNS */
+.innovative .btns .btn-learn-more {
+    width: 129px;
     height: 48px;
     color: #007AFF;
-    background-color: transparent;
+    background-color: #007bff00;
     border: 1px solid #007AFF;
     cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    line-height: 48px;
-    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
-.btn-learn-more:hover,
-a.btn-learn-more:hover {
+.innovative .btns .btn-learn-more:hover {
     background-color: #007AFF;
     color: #fff;
 }
 
-/* Адаптивность для экранов до 768px */
-@media (max-width: 768px) {
-    .main-text p {
-        font-size: 28px;
-    }
-
-    .main-description p {
-        font-size: 14px;
-    }
-
-    .innovative-content,
-    .features-news .features-text,
-    .exploring,
-    .your-potential-content {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .innovative .main-text h2,
-    .your-potential .main-text h2 {
-        font-size: 32px;
-    }
-
-    .uniquest-transforms .main-text h1 {
-        font-size: 32px;
-    }
-
-    .review-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .exploring .post h3 {
-        font-size: 20px;
-    }
-
-    .exploring .post p {
-        font-size: 14px;
-    }
+.innovative a{
+    width: 129px;
+    height: 48px;
+    font-size: 14px;
+    background-color: #007bff00;
+    border: 1px solid #007bff00;
+    text-decoration: none;
+    cursor: pointer;
+    color: #007AFF;
+    padding-left: 32px;
+}
+.innovative a img {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #007bff00;
 }
 
-/* Адаптивность для экранов до 480px */
-@media (max-width: 480px) {
-    .main-text p {
-        font-size: 24px;
-    }
 
-    .main-description p {
-        font-size: 12px;
-    }
+/* FEATURES */
 
-    .innovative .feature,
-    .your-potential .feature {
-        width: 100%;
-    }
-
-    .uniquest-transforms .box {
-        width: 100%;
-    }
-
-    .review-content .main-text p {
-        font-size: 16px;
-    }
-
-    .contacts-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact {
-        width: 100%;
-    }
-
-    .exploring .post h3 {
-        font-size: 18px;
-    }
-
-    .exploring .post p {
-        font-size: 12px;
-    }
+.features-news {
+    width: 100%;
+    height: 884px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 112px;
+    border-bottom: 1px solid #555;
 }
+
+.features-news .features-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1312px;
+    height: 144px;
+}
+
+.features-news .main-text h2{
+    font-size: 40px;
+    width: 616px;
+    height: 144px;
+    margin: 0;
+    color: #007AFF;
+}
+
+.features-news .secondary-text p{
+    width: 616px;
+    height: 135px;
+    font-size: 18px;
+    margin: 0;
+    color: #007AFF;
+}
+
+.exploring {
+    display: flex;
+    flex-direction: row;
+    width: 1312px;
+    height: 436px;
+    color: #007AFF;
+    gap: 48px;
+    margin-top: 80px;
+}
+
+.exploring .post {
+    width: 405px;
+    height: 436px;
+
+}
+
+.exploring .post img{
+    width: 405px;
+    height: 240px;
+}
+
+.exploring .post h3{
+    font-size: 24px;
+    margin: 0;
+    padding-top: 32px;
+}
+
+.exploring .post p{
+    font-size: 16px;
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.exploring .post a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #007AFF;
+    padding-top: 32px;
+}
+.exploring .post a img {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+/* YOUR-POTENTIAL START */
+
+.your-potential {
+    background-color: #fff;
+    width: 100%;
+    height: 864px;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 112px;
+    border-bottom: 1px solid #555;
+}
+
+.your-potential-content {
+    display: flex;
+    flex-direction: row; /* Устанавливаем направление флекса (по умолчанию) */
+    width: 1312px;
+    height: 640px;
+    gap: 80px;
+}
+
+.your-potential-text {
+    width: 616px;
+    height: 505px;
+    padding-top: 67.5px;
+    padding-bottom: 67.5px;
+}
+
+.your-potential-content img {
+    width: 616px;
+    height: 640px;
+    border: 1px solid black;
+}
+
+.your-potential .main-text{
+    width: 616px;
+    height: 261px;
+}
+
+.your-potential .main-text p{
+    font-size: 18px;
+    color: #007AFF;
+    margin-bottom: 32px;
+}
+
+.your-potential .main-text h2{
+    font-size: 48px;
+    color: #007AFF;
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+/* your-potential FEATURES */
+
+.your-potential .features {
+    display: flex;
+    justify-content: space-between; /* Разделение блоков по ширине */
+    width: 616px;
+    height: 132px;
+    padding-top: 32px;
+  }
+
+.your-potential .feature h3 {
+    color: #007AFF; /* Синий цвет заголовков */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.your-potential .feature p {
+    color: #555; /* Серый цвет текста */
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* your-potential BTNS */
+.your-potential .btns .btn-learn-more {
+    width: 129px;
+    height: 48px;
+    color: #007AFF;
+    background-color: #007bff00;
+    border: 1px solid #007AFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.your-potential .btns .btn-learn-more:hover {
+    background-color: #007AFF;
+    color: #fff;
+}
+
+.your-potential .btns{
+    padding-top: 32px;
+}
+
+.your-potential a{
+    width: 129px;
+    height: 48px;
+    font-size: 14px;
+    background-color: #007bff00;
+    border: 1px solid #007bff00;
+    text-decoration: none;
+    cursor: pointer;
+    color: #007AFF;
+    padding-left: 32px;
+}
+.your-potential a img {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #007bff00;
+}
+
+.your-potential .block-features {
+    width: 616px;
+    height: 172px;
+}
+
+.your-potential .feature {
+    width: 296px;
+    height: 156px;
+}
+
+.your-potential .feature img{
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(245, 245, 220, 0);
+}
+/* YOUR-POTENTIAL END */
+
+/* <-- UNIQUEST TRANSFORMS START--> */
+.uniquest-transforms {
+    background-color: #fff;
+    width: 100%;
+    height: 942px;
+    box-sizing: border-box;
+    padding-left: 64px;
+    padding-top: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid #555;
+}
+
+/* main-text start */
+.uniquest-transforms .main-text {
+    width: 768px;
+    height: 234px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.uniquest-transforms strong {
+    color: #007AFF;
+    font-size: 16px;
+}
+
+.uniquest-transforms h1 {
+    color: #007AFF;
+    font-size: 48px;
+    padding-bottom: 24px;
+    text-align: center;
+    margin: 0;
+    padding-top: 16px;
+}
+
+.uniquest-transforms p {
+    color: #007AFF;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+/* main-text end */
+
+
+/* main-boxes start */
+.uniquest-transforms .main-boxes {
+    width: 1312px;
+    height: 276px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.uniquest-transforms .box {
+    width: 405px;
+    height: 204px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.uniquest-transforms .box h3{
+    color: #007AFF;
+    font-size: 32px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    text-align: center;
+    margin: 0;
+}
+
+.uniquest-transforms .box img{
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(245, 245, 220, 0);
+}
+/* main-boxes end */
+
+
+
+/* main-btns start*/
+.uniquest-transforms .main-btns .btn-learn-more {
+    width: 129px;
+    height: 48px;
+    color: #007AFF;
+    background-color: #007bff00;
+    border: 1px solid #007AFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.uniquest-transforms .main-btns .btn-learn-more:hover {
+    background-color: #007AFF;
+    color: #fff;
+}
+
+.uniquest-transforms .main-btns{
+    padding-top: 32px;
+}
+
+.uniquest-transforms a{
+    width: 129px;
+    height: 48px;
+    font-size: 14px;
+    background-color: #007bff00;
+    border: 1px solid #007bff00;
+    text-decoration: none;
+    cursor: pointer;
+    color: #007AFF;
+    padding-left: 32px;
+}
+.uniquest-transforms a img {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #007bff00;
+}
+/* main-btns end*/
+
+/* <-- REVIEW START --> */
+
+.review {
+    width: 100%;
+    height: 864px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-top: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #555;
+}
+
+.review-content {
+    width: 1312px;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teacher img {
+    width: 512px;
+    height: 512px;
+} 
+
+.stars img{
+    width: 116px;
+    height: 19px;
+}
+
+.review-content .main-text p{
+    color: #007AFF;
+    font-size: 24px;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    width: 505px;
+    height: 61px;
+}
+
+.name .teacher-name{
+    border-right: 1px solid #007AFF;
+    width: 300px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.name .teacher-name p{
+    color: #007AFF;
+    margin: 0;
+}
+
+.name .teacher-name h1{
+    color: #007AFF;
+    margin: 0;
+    font-size: 20px;
+}
+
+.university img{
+    padding-left: 20px;
+    height: 38px;
+    width: 210px;
+}
+/* <-- REVIEW END --> */
+
+
+/* <-- CONTACTS START --> */
+.contacts {
+    width: 100%;
+    height: 450px;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #555;
+}
+
+.contacts-content {
+    width: 1312px;
+    height: 226px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact {
+    width: 405.33px;
+    height: 226px;
+    flex-direction: column;
+    margin-right: 48pxghble;
+}
+
+.contact img{
+    width: 48px;
+    height: 48px;
+}
+
+.contact h1{
+    font-size: 32px;
+    color: #007AFF;
+}
+
+.contact p{
+    font-size: 16px;
+    color: #007AFF;
+}
+
+.contact a{
+    font-size: 16px;
+    color: #007AFF;
+    cursor: pointer;
+}
+
+/* <-- CONTACTS END --> */
