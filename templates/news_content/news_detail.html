@@ -1,8 +1,8 @@
 {% load static %}
 
-{% block title %}
+<!-- {% block title %}
     {{ news.title }}
-{% endblock %}
+{% endblock %} -->
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
@@ -11,7 +11,7 @@
 
 <div class="news_detail">
     {% if news.image %}
-        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+        <img src="{{ news.background_image.url }}" alt="{{ news.title }}">
     {% endif %}
     <div class="main-content">
         <div class="main-text">
@@ -19,7 +19,7 @@
             <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
         </div>
         <div class="news-content">
-            {{ news.content|safe }}
+            <p>{{ news.content|safe }}</p>
         </div>
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
