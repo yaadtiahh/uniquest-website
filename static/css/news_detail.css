@@ -1,9 +1,9 @@
 body, html {
     width: 100%;
     height: 100%;
-    margin-top: 72px;
     padding: 0;
     background-color: #ffffff;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Шрифт */
 }
 
@@ -37,4 +37,5 @@ body, html {
     color: #569CFF;
     text-align: left;
     padding-left: 64px;
+    max-width: 136ch;
 }
