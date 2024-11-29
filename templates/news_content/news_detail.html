@@ -3,11 +3,10 @@
 <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
 
 <div class="main-content">
-    {% if news.image %}
-        <div class="news_detail">
-            <img src="{{ news.background_image.url }}" alt="{{ news.title }}">
-        </div>
-    {% endif %}
+    <div class="news_detail">
+        <img src="{{ news.background_image.url}}" alt="">
+    </div>
+    
     <div class="main-text">
         <h1>{{ news.title }}</h1>
         <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
