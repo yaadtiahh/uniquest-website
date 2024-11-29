@@ -642,11 +642,12 @@ body, html {
     .uniquest-transforms .main-boxes {
         flex-direction: column; /* Измените направление на колонку для мобильных устройств */
         align-items: center; /* Центрируйте элементы */
+        width: 100%; /* Убедитесь, что ширина 100% */
     }
 
     .your-potential-content img,
     .innovative-content img {
-        width: 100%; /* Полная ширина для изображений */
+        max-width: 100%; /* Полная ширина для изображений */
         height: auto; /* Автоматическая высота для сохранения пропорций */
     }
 }
