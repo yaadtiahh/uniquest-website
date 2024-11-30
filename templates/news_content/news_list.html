@@ -3,29 +3,36 @@
 {% load static %}
 
 {% block title %}
-  The Quest
+  News_list
 {% endblock %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'css/template.css' %}">
     <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
 {% endblock %}
 
 
 {% block body %}
-    <h1>Новости</h1>
-    <div class="news-list" >
-        {% for news in news %}
-        <div class="news-item">
-            <img src="{{ news.background_image.url}}" alt="">
-                <div class="main-text">
-                <h2><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
-                {{ news.content|safe|truncatewords:7}}
-                <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
-            </div>
+<div class="news">
+    <!-- Секция News -->
+    <div class="content" id="news">
+        <div class="news-container">
+            {% if news_list %}
+                {% for news in news_list %}
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
+                        </div>
+                        <div class="news-content" style="background-image: url('{{ news.content_image.url }}');">
+                            <p class="news-date">{{ news.published_date }}</p>
+                            <h2 class="news-title">{{ news.title|safe }}</h2>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-news-message">No news available at the moment.</p>
+            {% endif %}
         </div>
-        {% empty %}
-            <p>Пока нет новостей.</p>
-        {% endfor %}
     </div>
     
 {% endblock %}

@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
 from .models import News
 
 
@@ -16,17 +15,3 @@ def news_detail(request, pk):
 def news_list(request):
     news_list = News.objects.filter(is_visible=True).order_by('-created_at')
     return render(request, 'news_list.html', {'news_list': news_list})
-
-
-# Класс-based представление для списка новостей
-class NewsListView(ListView):
-    model = News
-    template_name = 'news_content/news_list.html'  # Шаблон для отображения списка новостей
-    context_object_name = 'news'  # Контекст, с которым будет работать шаблон
-
-
-# Класс-based представление для деталей одной новости
-class NewsDetailView(DetailView):
-    model = News
-    template_name = 'news_content/news_detail.html'  # Шаблон для отображения новости по slug
-    context_object_name = 'news'  # Контекст для шаблона

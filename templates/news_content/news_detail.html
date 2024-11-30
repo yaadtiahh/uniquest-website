@@ -19,7 +19,7 @@
         <h1 class="news-title">{{ news_item.title|safe }}</h1>
         <p class="news-date">{{ news_item.created_at }}</p>
         <div class="news-content">
-            {{ news_item.content|linebreaks }}
+            {{ news_item.description|linebreaks }}
         </div>
 
         <a href="{% url 'news_list' %}">Вернуться к списку</a>
