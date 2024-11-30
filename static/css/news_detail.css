@@ -25,11 +25,12 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .main-text p{
     color: #FF5151;
-    text-align: center;
+    text-align: left;
     margin-top: 21px;
     margin-bottom: 21px;
     padding-left: 64px;
