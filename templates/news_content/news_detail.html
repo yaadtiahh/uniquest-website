@@ -2,20 +2,29 @@
 
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
-<link rel="stylesheet" href="{% static 'css/template.css' %}">
+{% block title %}
+  News detail
+{% endblock %}
 
-<div class="main-content">
-    <div class="news_detail">
-        <img src="{{ news.background_image.url}}" alt="">
-    </div>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/template.css' %}">
+{% endblock %}
 
-    <div class="main-text">
-        <h1>{{ news.title }}</h1>
-        <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
-        <div class="news-content">
-            <p>{{ news.content|safe }}</p>
+
+{% block body %}
+    <div class="main-content">
+        <div class="news_detail">
+            <img src="{{ news.background_image.url}}" alt="">
         </div>
-        <a href="{% url 'news_list' %}">Вернуться к списку</a>
+
+        <div class="main-text">
+            <h1>{{ news.title }}</h1>
+            <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
+            <div class="news-content">
+                <p>{{ news.content|safe }}</p>
+            </div>
+            <a href="{% url 'news_list' %}">Вернуться к списку</a>
+        </div>
     </div>
-</div>
+{% endblock %}
