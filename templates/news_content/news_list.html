@@ -18,7 +18,7 @@
         <div class="news-item">
             <img src="{{ news.background_image.url}}" alt="">
                 <div class="main-text">
-                <h2><a href="{% url 'news_detail' news.pk %}" class="news-button open">Open</a></h2>
+                <h2><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
                 {{ news.content|safe|truncatewords:7}}
                 <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
             </div>
