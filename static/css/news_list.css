@@ -1,226 +1,35 @@
 body, html {
-    background: white;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Высота экрана */
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
-    font-family: 'Chakra Petch', sans-serif;
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Шрифт */
 }
 
-/* Стили выделения текста */
-::selection {
-    background: transparent; 
-    color: #FF4E47; 
-}
-::-moz-selection {
-    background: transparent; 
-    color: #FF4E47;
-}
-
-.main-container {
-    border-bottom: 1px solid rgb(39, 39, 39);
-    height: 677px;
+.news-list {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Выравнивание по низу */
+    flex-direction: row;
+    gap: 30px;
+    padding-left: 64px;
 }
 
-.info {
-    margin: 0px 250px 0;
-    text-align: left;
+.news-item {
+    width: 400px; 
+    height: 350px;
 }
 
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    margin-bottom: 25px; /* Отступ снизу */
+.news-item img{
+    width: 400px; 
+    max-height: 250px;
+    height: auto;
 }
 
-.sub-title {
-    color: #797979;
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.main-text p {
-    margin: 0;
-    font-size: 92px;
-    line-height: 92px;
-    font-weight: bold;
-    margin-bottom: 25px; /* Отступ снизу */
-    color: white;
-}
-
-.readmore a {
-    text-decoration: none; /* Убираем подчеркивание у ссылки */
-    font-size: 20px;
-    color: rgb(128, 128, 128); /* Задаем нужный цвет */
-    letter-spacing: 1px;
-    line-height: 24px; /* Совпадает с высотой иконки */
-    font-weight: 200;
-    display: inline-flex;
-    align-items: center; /* Выравнивание текста и иконки */
-}
-
-.readmore a:hover {
-    color: #FFCE00; /* Задаем нужный цвет */
-}
-
-.right-arrow-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 5px; /* Отступ от текста */
-    vertical-align: middle;
-}
-
-.main-content p {
-    font-size: 15px;
-    font-weight: 500;
-    border: solid 3px #5EF5FF;
-    border-radius: 5px;
-    color: #5EF5FF;
-    background: rgb(94, 246, 255, 15%);
-    height: 31px;
-    width: 150px;
+.main-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    color: #007AFF;
+    flex-direction: column;
     margin: 0;
-}
-
-/* кнопки news, updates, events */
-  
-.menu {
-    margin: 0px 250px 0;
-    margin-top: 90px;
-}
-
-.menu .menu-button {
-    width: 200px;
-    height: 60px;
-    background-color: #0D0D0D;
-    color: #ACACAC;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 2%;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    margin-right: 20px;
-}
-
-
-.menu-button:not(.active):hover {
-    background-color: #131313;
-}
-
-.menu-button.active {
-    color: #FFCE00;
-    border-top: 2px solid #FFCE00; /* Подчеркивание активной кнопки */
-}
-
-.content {
-    padding: 20px;
-}
-  
-.news-events-updates {
-  background: url('../img/bg.png') no-repeat center center/cover;
-  height: 1000px;
-  background-color: #111;
-  color: antiquewhite;
-}
-
-.news-container, .events-container, .updates-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  margin-left: 265px;
-  margin-top: 50px;
-  z-index: 11;
-}
-
-.news-card, .event-card, .update-card {
-  width: 430px;
-  min-height: 475px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-}
-
-.news-image img, .event-image img, .update-icon img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-}
-
-.news-content, .event-content, .update-content {
-  flex-grow: 1;
-  padding: 20px 30px;
-  display: flex;
-  flex-direction: column;
-  background-color: #0000004f;
-  justify-content: space-between;
-}
-
-.news-date, .event-date, .update-date {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #7d7d7d;
-  line-height: 29px;
-  margin: 0 0 10px 0;
-}
-
-.news-title, .event-title, .update-title {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 37px;
-  margin: 0 0 10px 0;
-}
-
-.news-buttons, .event-buttons, .update-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 15px;
-  position: relative;
-  margin-top: auto;
-}
-
-.news-button, .event-button, .update-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 12px;
-}
-
-.news-button.open, .event-button.open, .update-button.open {
-  width: 80px;
-  height: 40px;
-  background-color: #5ef6ff;
-  font-size: 22px;
-  font-weight: 600;
-  font-family: 'Chakra Petch', sans-serif;
-  color: #000;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease;
-}
-
-.news-button.open:hover, .event-button.open:hover, .update-button.open:hover {
-  background-color: transparent;
-  color: #5ef6ff;
-  border: 1px solid #5ef6ff;
 }
