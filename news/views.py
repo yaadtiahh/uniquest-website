@@ -9,8 +9,11 @@ def index(request):
 
 
 def news_list(request, pk):
-    news_item = get_object_or_404(News, pk=pk)
-    return render(request, 'news_list.html', {'news_item': news_item})
+    news_list = News.objects.filter(is_visible=True).order_by('-published_date')
+
+    return render(request, 'news_list.html', {
+        'news_list': news_list,
+    })
 
 
 def news_detail(request, pk):
