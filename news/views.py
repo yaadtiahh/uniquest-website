@@ -13,5 +13,5 @@ def news_detail(request, pk):
 
 
 def news_list(request):
-    news_list = News.objects.filter(is_visible=True).order_by('-created_at')
+    news_list = News.objects.filter(is_visible=True).order_by('-published_date')
     return render(request, 'news_list.html', {'news_list': news_list})
