@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import News
 
@@ -6,6 +6,11 @@ from .models import News
 # Функциональное представление для домашней страницы
 def index(request):
     return render(request, 'index.html')  # Убедитесь, что шаблон 'index.html' существует
+
+
+def news_detail(request, pk):
+    news_item = get_object_or_404(News, pk=pk)
+    return render(request, 'news_detail.html', {'news_item': news_item})
 
 
 # Класс-based представление для списка новостей
