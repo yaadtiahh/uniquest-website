@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('news_list/', views.NewsListView.as_view(), name='news_list'),  # Для списка новостей
-    path('news/<slug:slug>/', views.NewsDetailView.as_view(), name='news_detail')
+    path('news/<int:pk>/', views.news_detail, name='news_detail'),
+    path('news/', views.info_center, name='news_list'),
 ]
