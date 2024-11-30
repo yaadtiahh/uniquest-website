@@ -43,9 +43,9 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: left;
 }
 
 .main-text .news-content p{
     color: #569CFF;
-    text-align: left;
 }
