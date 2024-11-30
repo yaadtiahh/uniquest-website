@@ -11,7 +11,6 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column !important;
 }
 
 .news-main-content .news_detail img {
@@ -28,6 +27,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 30px;
 }
 
