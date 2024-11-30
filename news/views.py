@@ -13,6 +13,11 @@ def news_detail(request, pk):
     return render(request, 'news_detail.html', {'news_item': news_item})
 
 
+def news_list(request):
+    news_list = News.objects.filter(is_visible=True).order_by('-published_date')
+    return render(request, 'news_list.html', {'news_list': news_list})
+
+
 # Класс-based представление для списка новостей
 class NewsListView(ListView):
     model = News

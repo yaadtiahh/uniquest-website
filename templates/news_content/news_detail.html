@@ -13,17 +13,15 @@
 
 
 {% block body %}
-    <div class="news-main-content">
-        <div class="news_detail">
-            <img src="{{ news.background_image.url}}" alt="">
+    <div class="news_detail">
+        <img src="{{ news.background_image.url}}" alt="">
+
+        <h1 class="news-title">{{ news_item.title|safe }}</h1>
+        <p class="news-date">{{ news_item.published_date }}</p>
+        <div class="news-content">
+            {{ news_item.content|linebreaks }}
         </div>
-        <div class="news-main-text">
-            <h1>{{ news.title }}</h1>
-            <p><small>Дата: {{ news.created_at|date:"d M Y" }}</small></p>
-            <div class="news-content">
-                <p>{{ news.content|safe }}</p>
-            </div>
-            <a href="{% url 'news_list' %}">Вернуться к списку</a>
-        </div>
+
+        <a href="{% url 'news_list' %}">Вернуться к списку</a>
     </div>
 {% endblock %}
