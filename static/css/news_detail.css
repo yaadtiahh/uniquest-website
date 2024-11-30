@@ -1,5 +1,5 @@
 body, html {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0;
   padding: 0;
   height: auto; /* Высота экрана */
@@ -12,7 +12,7 @@ body, html {
     align-items: center;
     margin: 150px auto 420px auto; /* Отступ сверху и снизу */
     width: 1420px; /* Ширина основного блока */
-}
+  }
 
 .back-link {
     display: flex;
@@ -24,11 +24,11 @@ body, html {
     font-weight: 400;
     letter-spacing: 2%;
     margin-bottom: 35px; /* Отступ под ссылкой */
-}
+  }
 
 .back-link svg {
     margin-right: 10px; /* Отступ между иконкой и текстом */
-}
+  }
 
 .news-title {
     font-family: 'Chakra Petch', sans-serif;
@@ -40,11 +40,11 @@ body, html {
     margin-bottom: 25px; /* Отступ под заголовком */
     color: #ffffff;
     margin: 0;
-}
-
+  }
+  
 p{
     margin: 0;
-}
+  }
 
 .news-date {
     font-family: 'Chakra Petch', sans-serif;
@@ -52,7 +52,7 @@ p{
     font-weight: 600;
     color: #7D7D7D;
     margin: 25px 0 0 0;
-}
+  }
 
 .news-content {
     margin-top: 50px;
@@ -68,3 +68,5 @@ p{
     color: #ffffff;
     word-wrap: break-word;  /* Перенос длинных слов */
 }
+
+  

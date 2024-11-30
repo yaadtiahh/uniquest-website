@@ -7,37 +7,127 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
 {% endblock %}
 
-
 {% block body %}
-<div class="news-events-updates">
-    <!-- Секция News -->
-    <div class="content" id="news">
-        <div class="news-container">
-            {% if news_list %}
-                {% for news in news_list %}
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
-                        </div>
-                        <div class="news-content" style="background-image: url('{{ news.content_image.url }}');">
-                            <p class="news-date">{{ news.published_date }}</p>
-                            <h2 class="news-title">{{ news.title|safe }}</h2>
-                            <div class="news-buttons">
-                                <button class="news-button small">
-                                    <img src="{% static 'img/icon-share.svg' %}" alt="Share">
-                                </button>
-                                <a href="{% url 'news_detail' news.pk %}" class="news-button open">Open</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+<main>
+    <div class="main-container">
+        <div class="info">
+            {% if latest_news %}
+                <div class="main-content">
+                    <span class="sub-title">{{ latest_news.published_date|date:"d F Y" }}</span>
+                    <p>NEW POST</p>
+                </div>
+                <div class="main-text">
+                    <p>{{ latest_news.title|safe }}</p>
+                </div>
+                <div class="readmore">
+                    <a href="{% url 'news_detail' latest_news.pk %}">
+                        READ MORE
+                        <svg class="right-arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12L20.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 19L21 12L14 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
             {% else %}
-                <p class="no-news-message">No news available at the moment.</p>
+                <p class="no-news-message">No recent posts available.</p>
             {% endif %}
         </div>
+
+        <div class="menu">
+            <button href="?section=news" class="menu-button" data-section="news">NEWS</button>
+            <button href="?section=events" class="menu-button" data-section="events">EVENTS</button>
+            <button href="?section=updates" class="menu-button" data-section="updates">UPDATES</button>
+        </div>
     </div>
-    
+
+    <div class="news-events-updates">
+        <!-- Секция News -->
+        <div class="content" id="news">
+            <div class="news-container">
+                {% if news_list %}
+                    {% for news in news_list %}
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
+                            </div>
+                            <div class="news-content" style="background-image: url('{{ news.content_image.url }}');">
+                                <p class="news-date">{{ news.published_date }}</p>
+                                <h2 class="news-title">{{ news.title|safe }}</h2>
+                                <div class="news-buttons">
+                                    <button class="news-button small">
+                                        <img src="{% static 'img/icon-share.svg' %}" alt="Share">
+                                    </button>
+                                    <a href="{% url 'news_detail' news.pk %}" class="news-button open">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-news-message">No news available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Секция Events -->
+        <div class="content" id="events" style="display: none;">
+            <div class="events-container">
+                {% if events_list %}
+                    {% for event in events_list %}
+                    <div class="event-card">
+                      {% if event.image %}
+                          <div class="event-image">
+                              <img src="{{ event.image.url }}" alt="{{ event.title }}">
+                          </div>
+                      {% else %}
+                          <div class="event-image">
+                              <img src="{% static 'img/default-event.png' %}" alt="Default Event Image">
+                          </div>
+                      {% endif %}
+                      <div class="event-content" style="background-image: url('{{ event.content_image.url }}');">
+                          <p class="event-date">{{ event.date|date:"d F Y H:i" }}</p>
+                          <h2 class="event-title">{{ event.title }}</h2>
+                          <p class="event-description">{{ event.description }}</p>
+                      </div>
+                  </div>
+                  
+                    {% endfor %}
+                {% else %}
+                    <p class="no-events-message">No events available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Секция Updates -->
+        <div class="content" id="updates" style="display: none;">
+            <div class="updates-container">
+                {% if updates_list %}
+                    {% for update in updates_list %}
+                    <div class="update-card">
+                      {% if update.icon %}
+                          <div class="update-icon">
+                              <img src="{{ update.icon.url }}" alt="{{ update.title }}">
+                          </div>
+                      {% else %}
+                          <div class="update-icon">
+                              <img src="{% static 'img/default-update.png' %}" alt="Default Update Icon">
+                          </div>
+                      {% endif %}
+                      <div class="update-content" style="background-image: url('{{ update.content_image.url }}');">
+                          <p class="update-date">{{ update.published_date }}</p>
+                          <h2 class="update-title">{{ update.title }}</h2>
+                          <p class="update-description">{{ update.description }}</p>
+                      </div>
+                  </div>
+                  
+                    {% endfor %}
+                {% else %}
+                    <p class="no-updates-message">No updates available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}
