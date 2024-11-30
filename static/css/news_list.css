@@ -32,5 +32,9 @@ body, html {
     color: #007AFF;
     flex-direction: column;
     margin: 0;
+    
+}
+
+.main-text p{
     text-align: left;
 }
