@@ -46,6 +46,11 @@ body, html {
 .news-main-content .news-main-text .news-content {
     width: 840px;
     text-align: left;
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+
+
 }
 
 .news-main-content .news-main-text .news-content p{
