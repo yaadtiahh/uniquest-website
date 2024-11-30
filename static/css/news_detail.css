@@ -11,6 +11,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .news-main-content .news_detail img {
