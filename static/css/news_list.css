@@ -32,4 +32,5 @@ body, html {
     color: #007AFF;
     flex-direction: column;
     margin: 0;
+    text-align: left;
 }
