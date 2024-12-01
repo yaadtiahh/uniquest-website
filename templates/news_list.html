@@ -21,7 +21,11 @@
                 {% for news in news_list %}
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
+                            {% if news_item.news_image %}
+                                <img src="{{ news_item.news_image.url }}" alt="{{ news_item.title }}">
+                            {% else %}
+                                <p>Нет изображения</p>
+                            {% endif %}
                         </div>
                         <div class="news-content" style="background-image: url('{{ news.content_image.url }}');">
                             <p class="news-date">{{ news.published_date }}</p>
