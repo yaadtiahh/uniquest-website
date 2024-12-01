@@ -37,9 +37,7 @@ ROOT_URLCONF = 'uniquest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates',  # Папка для глобальных шаблонов
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Это должно быть настроено, если у вас есть глобальные шаблоны
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
