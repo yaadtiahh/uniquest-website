@@ -52,17 +52,18 @@ body, html {
   
 .news-date {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 600;
-    color: #7d7d7d;
+    color: #000000;
     line-height: 29px;
     margin: 0 0 10px 0;
 }
   
 .news-title {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: bold;
     line-height: 37px;
     margin: 0 0 10px 0;
+    color: #007AFF;
 }
