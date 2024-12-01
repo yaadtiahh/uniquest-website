@@ -37,7 +37,7 @@ ROOT_URLCONF = 'uniquest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'news', 'templates')],  # Абсолютный путь к шаблонам
+        'DIRS': [os.path.join(BASE_DIR, 'news', 'templates')],  # Указываем путь к news/templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
