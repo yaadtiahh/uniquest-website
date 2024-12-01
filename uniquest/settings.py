@@ -39,7 +39,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),  # Путь к глобальной папке templates
-            os.path.join(BASE_DIR, 'news', 'templates'),  # Путь к папке templates в приложении news
         ],
         'APP_DIRS': True,
         'OPTIONS': {
