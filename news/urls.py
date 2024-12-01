@@ -3,8 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('news_list/', views.news_list, name='news_list'),
-    path('news/<int:pk>/', views.news_detail, name='news_detail'),
-    path('news/', views.news_list, name='news'),
+    path('', views.index, name='index'),  # Главная страница
+    path('news_list/', views.news_list, name='news_list'),  # Список новостей
+    path('news_detail/<int:pk>/', views.news_detail, name='news_detail'),  # Детали новости
 ]
