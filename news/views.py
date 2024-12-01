@@ -9,9 +9,9 @@ def index(request):
 
 def news_detail(request, pk):
     news_item = get_object_or_404(News, pk=pk)
-    return render(request, '/news_detail.html', {'news_item': news_item})
+    return render(request, 'news/news_detail.html', {'news_item': news_item})
 
 
 def news_list(request):
     news_list = News.objects.filter(is_visible=True).order_by('-published_date')
-    return render(request, '/news_list', {'news_list': news_list})
+    return render(request, 'news/news_list', {'news_list': news_list})
